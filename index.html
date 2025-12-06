@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arigye Wisdom | Digital Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Counter.dev Analytics -->
+    <script src="https://cdn.counter.dev/script.js" data-id="YOUR_SITE_ID" data-utcoffset="1"></script>
+    <!-- You need to replace YOUR_SITE_ID with your actual ID from counter.dev -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -150px;
+            right: -100px;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: -100px;
+            left: -80px;
+        }
+        
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 25px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Visitor Counter Badge */
+        .visitor-counter {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 10px 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .visitor-counter i {
+            font-size: 1.2rem;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Social Links Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        
+        .social-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .social-header {
+            padding: 25px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .social-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .social-content {
+            padding: 25px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .social-desc {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .social-link {
+            display: block;
+            text-align: center;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            transform: scale(1.03);
+        }
+        
+        /* Platform-specific colors */
+        .tiktok .social-header { background: #000000; }
+        .instagram .social-header { background: #E4405F; }
+        .telegram .social-header { background: #26A5E4; }
+        .whatsapp .social-header { background: #25D366; }
+        .linkedin .social-header { background: #0077B5; }
+        .imo .social-header { background: #00AFF0; }
+        .reddit .social-header { background: #FF4500; }
+        .signal .social-header { background: #3A76F0; }
+        
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            min-width: 250px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Admin Stats Panel (Hidden by default) */
+        .stats-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            padding: 20px;
+            width: 300px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .stats-panel.active {
+            display: block;
+        }
+        
+        .stats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stats-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-section {
+                padding: 30px 20px;
+            }
+            
+            .contact-item {
+                min-width: 100%;
+            }
+            
+            .stats-panel {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 60px 0 40px;
+            }
+            
+            .profile-pic {
+                width: 130px;
+                height: 130px;
+                font-size: 50px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-pic">AW</div>
+            <h1>Arigye Wisdom</h1>
+            <p class="tagline">Digital professional connecting ideas and people across platforms. Passionate about technology, communication, and building meaningful networks.</p>
+            
+            <!-- Visitor Counter -->
+            <div class="visitor-counter">
+                <i class="fas fa-eye"></i>
+                <span>Site Visitors: <span id="visitorCount">Loading...</span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Social Links Section -->
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="social-grid">
+                <!-- TikTok Card -->
+                <a href="tiktok.html" class="social-card tiktok">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+                        <div class="social-name">TikTok</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Short-form creative content and insights into digital trends.</p>
+                        <div class="social-link">Visit My TikTok</div>
+                    </div>
+                </a>
+                
+                <!-- Instagram Card -->
+                <a href="instagram.html" class="social-card instagram">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="social-name">Instagram</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Personal and professional moments, visual storytelling.</p>
+                        <div class="social-link">Follow on Instagram</div>
+                    </div>
+                </a>
+                
+                <!-- Telegram Card -->
+                <a href="telegram.html" class="social-card telegram">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-telegram"></i></div>
+                        <div class="social-name">Telegram</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Direct messaging and group discussions on various topics.</p>
+                        <div class="social-link">Message on Telegram</div>
+                    </div>
+                </a>
+                
+                <!-- WhatsApp Card -->
+                <a href="whatsapp.html" class="social-card whatsapp">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="social-name">WhatsApp</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Quick conversations and direct communication.</p>
+                        <div class="social-link">Chat on WhatsApp</div>
+                    </div>
+                </a>
+                
+                <!-- LinkedIn Card -->
+                <a href="linkedin.html" class="social-card linkedin">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-linkedin"></i></div>
+                        <div class="social-name">LinkedIn</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Professional network, career insights, and industry connections.</p>
+                        <div class="social-link">Connect on LinkedIn</div>
+                    </div>
+                </a>
+                
+                <!-- Imo Card -->
+                <a href="imo.html" class="social-card imo">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fas fa-comment-dots"></i></div>
+                        <div class="social-name">Imo</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Instant messaging and video calls for quick connections.</p>
+                        <div class="social-link">Connect on Imo</div>
+                    </div>
+                </a>
+                
+                <!-- Reddit Card -->
+                <a href="reddit.html" class="social-card reddit">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-reddit"></i></div>
+                        <div class="social-name">Reddit</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Community discussions and niche interest exploration.</p>
+                        <div class="social-link">Join on Reddit</div>
+                    </div>
+                </a>
+                
+                <!-- Signal Card -->
+                <a href="signal.html" class="social-card signal">
+                    <div class="social-header">
+                        <div class="social-icon"><i class="fab fa-signal"></i></div>
+                        <div class="social-name">Signal</div>
+                    </div>
+                    <div class="social-content">
+                        <p class="social-desc">Private and secure messaging for confidential conversations.</p>
+                        <div class="social-link">Message on Signal</div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Contact Summary -->
+            <div class="contact-section">
+                <h2 class="section-title">Get In Touch</h2>
+                <p style="text-align: center; margin-bottom: 20px;">I'm active across multiple platforms. Choose your preferred method to connect with me.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h3>Multiple Platforms</h3>
+                            <p>Choose from 8+ connection options</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-bolt"></i></div>
+                        <div>
+                            <h3>Quick Response</h3>
+                            <p>Typically reply within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-user-friends"></i></div>
+                        <div>
+                            <h3>Networking</h3>
+                            <p>Open to professional connections</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Stay connected across platforms for updates, insights, and conversations</p>
+            <p class="copyright">© 2025 Arigye Wisdom. All rights reserved. | <span id="totalVisitors">Loading visitor stats...</span></p>
+        </div>
+    </footer>
+    
+    <!-- Stats Toggle Button -->
+    <div class="stats-toggle" id="statsToggle">
+        <i class="fas fa-chart-bar"></i>
+    </div>
+    
+    <!-- Stats Panel -->
+    <div class="stats-panel" id="statsPanel">
+        <div class="stats-header">
+            <h3>Visitor Statistics</h3>
+            <button onclick="closeStats()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">×</button>
+        </div>
+        <div id="statsContent">
+            <p><i class="fas fa-users"></i> Total Visitors: <span id="statsTotal">0</span></p>
+            <p><i class="fas fa-calendar-day"></i> Today: <span id="statsToday">0</span></p>
+            <p><i class="fas fa-clock"></i> Current Visitors: <span id="statsCurrent">0</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> Your Location: <span id="statsLocation">Detecting...</span></p>
+            <hr>
+            <p style="font-size: 0.9rem; color: #666;"><i class="fas fa-info-circle"></i> Stats update every 5 minutes</p>
+        </div>
+    </div>
+    
+   <script>
+        // ======================
+        // LOCAL VISITOR COUNTER
+        // ======================
+        
+        // Initialize or update visitor count in localStorage
+        function updateLocalVisitorCount() {
+            // Get current count from localStorage
+            let totalVisits = localStorage.getItem('siteTotalVisits');
+            let todayVisits = localStorage.getItem('siteTodayVisits');
+            let todayDate = new Date().toDateString();
+            let lastVisitDate = localStorage.getItem('lastVisitDate');
+            
+            // Initialize if first visit
+            if (!totalVisits) {
+                totalVisits = 0;
+            }
+            if (!todayVisits || lastVisitDate !== todayDate) {
+                todayVisits = 0;
+                localStorage.setItem('lastVisitDate', todayDate);
+            }
+            
+            // Increment counts
+            totalVisits = parseInt(totalVisits) + 1;
+            todayVisits = parseInt(todayVisits) + 1;
+            
+            // Save to localStorage
+            localStorage.setItem('siteTotalVisits', totalVisits);
+            localStorage.setItem('siteTodayVisits', todayVisits);
+            
+            // Update display
+            document.getElementById('visitorCount').textContent = totalVisits.toLocaleString();
+            document.getElementById('totalVisitors').innerHTML = `<i class="fas fa-users"></i> Total Visitors: ${totalVisits.toLocaleString()}`;
+            
+            // Update stats panel
+            document.getElementById('statsTotal').textContent = totalVisits.toLocaleString();
+            document.getElementById('statsToday').textContent = todayVisits.toLocaleString();
+            
+            // Simulate concurrent users (random between 1-10)
+            document.getElementById('statsCurrent').textContent = Math.floor(Math.random() * 10) + 1;
+            
+            return { total: totalVisits, today: todayVisits };
+        }
+        
+        // ======================
+        // GEOLOCATION DETECTION
+        // ======================
+        
+        function detectLocation() {
+            if (navigator.geolocation) {
+                // Try to get precise location
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        // Use a geocoding service (free tier of OpenStreetMap)
+                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                const city = data.address.city || data.address.town || data.address.village || 'Unknown';
+                                const country = data.address.country || 'Unknown';
+                                document.getElementById('statsLocation').textContent = `${city}, ${country}`;
+                            })
+                            .catch(() => {
+                                // Fallback to IP-based location
+                                getIPLocation();
+                            });
+                    },
+                    function(error) {
+                        // If user denies location, fallback to IP-based
+                        getIPLocation();
+                    }
+                );
+            } else {
+                // Fallback to IP-based location
+                getIPLocation();
+            }
+        }
+        
+        function getIPLocation() {
+            // Use free IP geolocation API
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.city || 'Unknown';
+                    const country = data.country_name || 'Unknown';
+                    document.getElementById('statsLocation').textContent = `${city}, ${country}`;
+                })
+                .catch(() => {
+                    document.getElementById('statsLocation').textContent = 'Location unavailable';
+                });
+        }
+        
+        // ======================
+        // STATS PANEL FUNCTIONS
+        // ======================
+        
+        function toggleStats() {
+            const panel = document.getElementById('statsPanel');
+            panel.classList.toggle('active');
+        }
+        
+        function closeStats() {
+            document.getElementById('statsPanel').classList.remove('active');
+        }
+        
+        // ======================
+        // INITIALIZATION
+        // ======================
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize visitor counter
+            updateLocalVisitorCount();
+            
+            // Detect user location
+            detectLocation();
+            
+            // Add event listener to stats toggle button
+            document.getElementById('statsToggle').addEventListener('click', toggleStats);
+            
+            // Simple hover effect enhancement
+            document.querySelectorAll('.social-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add animation on scroll
+            const cards = document.querySelectorAll('.social-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Simulate real-time updates every 5 minutes
+            setInterval(() => {
+                const current = document.getElementById('statsCurrent');
+                const currentCount = parseInt(current.textContent);
+                const change = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
+                const newCount = Math.max(1, currentCount + change);
+                current.textContent = newCount;
+            }, 300000); // 5 minutes
+        });
+        
+        // ======================
+        // SETUP INSTRUCTIONS
+        // ======================
+        
+        function showSetupInstructions() {
+            alert(`TO SET UP PROPER VISITOR TRACKING:
+            
+1. SIGN UP FOR FREE ANALYTICS:
+   - Go to https://counter.dev/
+   - Create a free account
+   - Add your website
+   - Get your tracking code
+   - Replace the script tag in the <head> with your code
+   
+2. OR USE GOOGLE ANALYTICS:
+   - Go to https://analytics.google.com/
+   - Create account
+   - Get your GA4 measurement ID
+   - Add it to the script below
+   
+Current tracking is local only (per device).`);
+        }
+        
+        // Show setup instructions on first visit
+        if (!localStorage.getItem('setupShown')) {
+            setTimeout(showSetupInstructions, 2000);
+            localStorage.setItem('setupShown', 'true');
+        }
+    </script>
+    
+    <!-- Optional: Google Analytics (Uncomment and add your GA4 ID) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_GA4_ID');
+    </script>
+    -->
+</body>
+</html>

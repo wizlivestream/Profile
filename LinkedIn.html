@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn - Arigye Wisdom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --linkedin: #0077B5;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .platform-header {
+            background: linear-gradient(135deg, var(--linkedin), #006699);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(0,0,0,0.4);
+            transform: translateX(-5px);
+        }
+        
+        .platform-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .platform-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 60px 0;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        
+        .platform-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .platform-details {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .detail-title {
+            font-size: 1.2rem;
+            color: var(--linkedin);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .action-card {
+            flex: 0 0 350px;
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .action-icon {
+            font-size: 4rem;
+            color: var(--linkedin);
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--linkedin);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #006699;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background: #f1f1f1;
+            color: #333;
+            margin-top: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background: #e1e1e1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .action-card {
+                width: 100%;
+                position: static;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Platform Header -->
+    <header class="platform-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Profile
+            </a>
+            <div class="platform-icon">
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <h1>My LinkedIn Profile</h1>
+            <p class="platform-tagline">Professional network, career insights, industry connections, and thought leadership in the digital space</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="platform-info">
+                    <div class="platform-details">
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-briefcase"></i> Professional Focus
+                            </h3>
+                            <p>My LinkedIn profile showcases my professional journey, skills, and accomplishments. I use the platform to connect with industry peers, share insights about digital transformation, and explore professional opportunities.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-network-wired"></i> Networking Approach
+                            </h3>
+                            <p>I believe in meaningful professional connections. When sending connection requests, I appreciate personalized messages that explain why you'd like to connect and how we might mutually benefit from the connection.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-newspaper"></i> Content Sharing
+                            </h3>
+                            <p>I regularly share articles, insights, and commentary about digital trends, professional development, and industry news. I engage with others' content by commenting thoughtfully and sharing valuable perspectives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-details">
+                        <h3 style="color: var(--linkedin); margin-bottom: 20px;">My LinkedIn Activity</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 10px;">Regular posting about digital trends and insights</li>
+                            <li style="margin-bottom: 10px;">Active engagement with my network's content</li>
+                            <li style="margin-bottom: 10px;">Professional development and career reflections</li>
+                            <li style="margin-bottom: 10px;">Industry event participation and learnings</li>
+                            <li>Recommendations and endorsements for colleagues</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h2>Connect on LinkedIn</h2>
+                    <p>Visit my LinkedIn profile to view my professional experience, connect for networking, or follow my industry insights.</p>
+                    
+                    <p style="margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 10px; font-style: italic;">
+                        You'll be redirected to LinkedIn to view my profile
+                    </p>
+                    
+                    <a href="https://www.linkedin.com/in/arigye-wisdom-69615736b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn">
+                        <i class="fab fa-linkedin"></i> Visit My LinkedIn
+                    </a>
+                    
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i> Back to All Platforms
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Connect with me across multiple platforms</p>
+            <p class="copyright">© 2023 Arigye Wisdom. LinkedIn is a registered trademark of LinkedIn Corporation.</p>
+        </div>
+    </footer>
+</body>
+</html>

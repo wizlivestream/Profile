@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram - Arigye Wisdom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --telegram: #26A5E4;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .platform-header {
+            background: linear-gradient(135deg, var(--telegram), #1c93d3);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(0,0,0,0.4);
+            transform: translateX(-5px);
+        }
+        
+        .platform-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .platform-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 60px 0;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        
+        .platform-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .platform-details {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .detail-title {
+            font-size: 1.2rem;
+            color: var(--telegram);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .action-card {
+            flex: 0 0 350px;
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: sticky;
+            top: 30px;
+        }
+        
+        .action-icon {
+            font-size: 4rem;
+            color: var(--telegram);
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--telegram);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #1c93d3;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background: #f1f1f1;
+            color: #333;
+            margin-top: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background: #e1e1e1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .action-card {
+                width: 100%;
+                position: static;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Platform Header -->
+    <header class="platform-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Profile
+            </a>
+            <div class="platform-icon">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <h1>My Telegram Channel</h1>
+            <p class="platform-tagline">Direct messaging, group discussions, and timely updates on various topics of interest</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="platform-info">
+                    <div class="platform-details">
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-comments"></i> Communication Style
+                            </h3>
+                            <p>On Telegram, I engage in direct conversations, participate in group discussions, and share timely updates. It's my go-to platform for more in-depth conversations compared to other social media platforms.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-bell"></i> Updates & Notifications
+                            </h3>
+                            <p>I use Telegram to share quick updates, interesting articles, and time-sensitive information. The platform's notification system ensures important messages are delivered promptly.</p>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3 class="detail-title">
+                                <i class="fas fa-user-friends"></i> Groups & Channels
+                            </h3>
+                            <p>I participate in several professional groups on Telegram and occasionally share insights in relevant channels. I'm open to connecting for one-on-one conversations about professional opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="platform-details">
+                        <h3 style="color: var(--telegram); margin-bottom: 20px;">Best Ways to Connect on Telegram</h3>
+                        <ul style="padding-left: 20px;">
+                            <li style="margin-bottom: 10px;">Direct messaging for private conversations</li>
+                            <li style="margin-bottom: 10px;">Joining relevant professional groups I participate in</li>
+                            <li style="margin-bottom: 10px;">Sharing interesting articles and resources</li>
+                            <li style="margin-bottom: 10px;">Quick updates about my availability</li>
+                            <li>Time-sensitive communication</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h2>Message on Telegram</h2>
+                    <p>Connect with me on Telegram for direct messaging, group discussions, or to join channels I participate in.</p>
+                    
+                    <p style="margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 10px; font-style: italic;">
+                        You'll be redirected to Telegram to start a conversation
+                    </p>
+                    
+                    <a href="https://t.me/madlytrue" target="_blank" class="btn">
+                        <i class="fab fa-telegram"></i> Message Me on Telegram
+                    </a>
+                    
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-home"></i> Back to All Platforms
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Connect with me across multiple platforms</p>
+            <p class="copyright">© 2023 Arigye Wisdom. Telegram is a registered trademark of Telegram Messenger Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>
