@@ -1,760 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arigye Wisdom | Digital Professional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Counter.dev Analytics -->
-    <script src="https://cdn.counter.dev/script.js" data-id="YOUR_SITE_ID" data-utcoffset="1"></script>
-    <!-- You need to replace YOUR_SITE_ID with your actual ID from counter.dev -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a252f;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 80px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            top: -150px;
-            right: -100px;
-        }
-        
-        header::after {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            bottom: -100px;
-            left: -80px;
-        }
-        
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 25px;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            font-weight: bold;
-            color: var(--primary);
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 2;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Visitor Counter Badge */
-        .visitor-counter {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 10px 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            position: relative;
-            z-index: 2;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .visitor-counter i {
-            font-size: 1.2rem;
-        }
-        
-        /* Main Content */
-        main {
-            flex: 1;
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 70px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-        
-        /* Social Links Grid */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-        
-        .social-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .social-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .social-header {
-            padding: 25px 20px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .social-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .social-name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        .social-content {
-            padding: 25px 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .social-desc {
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .social-link {
-            display: block;
-            text-align: center;
-            padding: 12px 20px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: auto;
-        }
-        
-        .social-link:hover {
-            background: var(--secondary);
-            transform: scale(1.03);
-        }
-        
-        /* Platform-specific colors */
-        .tiktok .social-header { background: #000000; }
-        .instagram .social-header { background: #E4405F; }
-        .telegram .social-header { background: #26A5E4; }
-        .whatsapp .social-header { background: #25D366; }
-        .linkedin .social-header { background: #0077B5; }
-        .imo .social-header { background: #00AFF0; }
-        .reddit .social-header { background: #FF4500; }
-        .signal .social-header { background: #3A76F0; }
-        
-        /* Contact Section */
-        .contact-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 25px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            min-width: 250px;
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
-        }
-        
-        .footer-text {
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        /* Admin Stats Panel (Hidden by default) */
-        .stats-panel {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            padding: 20px;
-            width: 300px;
-            z-index: 1000;
-            display: none;
-        }
-        
-        .stats-panel.active {
-            display: block;
-        }
-        
-        .stats-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .stats-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--secondary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1001;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-section {
-                padding: 30px 20px;
-            }
-            
-            .contact-item {
-                min-width: 100%;
-            }
-            
-            .stats-panel {
-                width: calc(100% - 40px);
-                right: 20px;
-                left: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            header {
-                padding: 60px 0 40px;
-            }
-            
-            .profile-pic {
-                width: 130px;
-                height: 130px;
-                font-size: 50px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Wisdom Arigye | Digital Professional & Network Builder</title>
+  <meta name="description" content="Connect with Wisdom Arigye, a digital professional passionate about technology, communication, and building meaningful networks. Find me on LinkedIn, Instagram, TikTok, and more.">
+  <meta name="author" content="Wisdom Arigye">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Wisdom Arigye | Digital Professional">
+  <meta property="og:description" content="Connecting ideas and people across platforms. Let's build something great together.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wisdomarigye.netlify.app">
+  
+  <!-- Favicon (simple emoji-based for now; replace with actual .ico if desired) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧠%3C/text%3E%3C/svg%3E">
+  
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ---------- DANCING BACKGROUND IMAGES / SHAPES ---------- */
+    .bg-dance {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .dancing-icon {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.2;
+      animation: floatDance 12s infinite ease-in-out;
+      filter: blur(0.5px);
+      transition: transform 0.2s;
+    }
+
+    /* different delays and sizes for variety */
+    .dancing-icon:nth-child(1) { top: 15%; left: 10%; font-size: 3rem; animation-duration: 14s; animation-delay: -2s; }
+    .dancing-icon:nth-child(2) { top: 70%; left: 85%; font-size: 2.5rem; animation-duration: 18s; animation-delay: -4s; }
+    .dancing-icon:nth-child(3) { top: 40%; left: 5%; font-size: 4rem; animation-duration: 20s; animation-delay: -1s; }
+    .dancing-icon:nth-child(4) { top: 80%; left: 20%; font-size: 2rem; animation-duration: 16s; animation-delay: -7s; }
+    .dancing-icon:nth-child(5) { top: 20%; left: 80%; font-size: 3.2rem; animation-duration: 22s; animation-delay: -3s; }
+    .dancing-icon:nth-child(6) { top: 55%; left: 60%; font-size: 2.8rem; animation-duration: 15s; animation-delay: -5s; }
+    .dancing-icon:nth-child(7) { top: 85%; left: 45%; font-size: 3.5rem; animation-duration: 19s; animation-delay: -9s; }
+    .dancing-icon:nth-child(8) { top: 10%; left: 50%; font-size: 2.2rem; animation-duration: 17s; animation-delay: -6s; }
+    .dancing-icon:nth-child(9) { top: 45%; left: 92%; font-size: 3rem; animation-duration: 21s; animation-delay: -2.5s; }
+    .dancing-icon:nth-child(10) { top: 30%; left: 30%; font-size: 2rem; animation-duration: 13s; animation-delay: -8s; }
+
+    @keyframes floatDance {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translate(15px, -25px) rotate(8deg) scale(1.05);
+      }
+      50% {
+        transform: translate(-12px, 30px) rotate(-5deg) scale(0.98);
+      }
+      75% {
+        transform: translate(20px, 15px) rotate(4deg) scale(1.02);
+      }
+      100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+    }
+
+    /* main card */
+    .card {
+      position: relative;
+      z-index: 10;
+      max-width: 550px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 2.5rem;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 55px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* profile section */
+    .profile {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, #a78bfa, #3b82f6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 500;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: transform 0.25s;
+    }
+    .avatar:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff, #c7d2fe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #cbd5e1;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px dashed rgba(255,255,255,0.2);
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+      margin: 1.2rem 0 0.8rem;
+      background: rgba(0,0,0,0.2);
+      padding: 0.8rem 1rem;
+      border-radius: 2rem;
+    }
+
+    /* links grid */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.9rem 1.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .social-btn i {
+      font-size: 1.5rem;
+      width: 32px;
+      text-align: center;
+    }
+
+    .social-btn span {
+      flex: 1;
+      font-size: 1rem;
+    }
+
+    .social-btn:hover {
+      transform: translateX(8px) scale(1.02);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* specific brand colors on hover (optional) */
+    .social-btn.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+    .social-btn.instagram:hover { background: linear-gradient(45deg, #f09433, #d62976, #962fbf); border-color: #fff; }
+    .social-btn.tiktok:hover { background: #000000; border-color: #25f4ee; }
+    .social-btn.twitter:hover { background: #1DA1F2; }
+    .social-btn.github:hover { background: #333; }
+    .social-btn.whatsapp:hover { background: #25D366; }
+    .social-btn.email:hover { background: #ea4335; }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 1.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2.8rem;
+      }
+      .social-btn {
+        padding: 0.7rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="profile-pic">AW</div>
-            <h1>Arigye Wisdom</h1>
-            <p class="tagline">Digital professional connecting ideas and people across platforms. Passionate about technology, communication, and building meaningful networks.</p>
-            
-            <!-- Visitor Counter -->
-            <div class="visitor-counter">
-                <i class="fas fa-eye"></i>
-                <span>Site Visitors: <span id="visitorCount">Loading...</span></span>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Social Links Section -->
-            <h2 class="section-title">Connect With Me</h2>
-            <div class="social-grid">
-                <!-- TikTok Card -->
-                <a href="tiktok.html" class="social-card tiktok">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
-                        <div class="social-name">TikTok</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Short-form creative content and insights into digital trends.</p>
-                        <div class="social-link">Visit My TikTok</div>
-                    </div>
-                </a>
-                
-                <!-- Instagram Card -->
-                <a href="Instagram.html" class="social-card instagram">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
-                        <div class="social-name">Instagram</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Personal and professional moments, visual storytelling.</p>
-                        <div class="social-link">Follow on Instagram</div>
-                    </div>
-                </a>
-                
-                <!-- Telegram Card -->
-                <a href="telegram.html" class="social-card telegram">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-telegram"></i></div>
-                        <div class="social-name">Telegram</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Direct messaging and group discussions on various topics.</p>
-                        <div class="social-link">Message on Telegram</div>
-                    </div>
-                </a>
-                
-                <!-- WhatsApp Card -->
-                <a href="Whatsapp.html" class="social-card whatsapp">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
-                        <div class="social-name">WhatsApp</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Quick conversations and direct communication.</p>
-                        <div class="social-link">Chat on WhatsApp</div>
-                    </div>
-                </a>
-                
-                <!-- LinkedIn Card -->
-                <a href="Linkedin.html" class="social-card linkedin">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-linkedin"></i></div>
-                        <div class="social-name">LinkedIn</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Professional network, career insights, and industry connections.</p>
-                        <div class="social-link">Connect on LinkedIn</div>
-                    </div>
-                </a>
-                
-                <!-- Imo Card -->
-                <a href="imo.html" class="social-card imo">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fas fa-comment-dots"></i></div>
-                        <div class="social-name">Imo</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Instant messaging and video calls for quick connections.</p>
-                        <div class="social-link">Connect on Imo</div>
-                    </div>
-                </a>
-                
-                <!-- Reddit Card -->
-                <a href="reddit.html" class="social-card reddit">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-reddit"></i></div>
-                        <div class="social-name">Reddit</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Community discussions and niche interest exploration.</p>
-                        <div class="social-link">Join on Reddit</div>
-                    </div>
-                </a>
-                
-                <!-- Signal Card -->
-                <a href="signal.html" class="social-card signal">
-                    <div class="social-header">
-                        <div class="social-icon"><i class="fab fa-signal"></i></div>
-                        <div class="social-name">Signal</div>
-                    </div>
-                    <div class="social-content">
-                        <p class="social-desc">Private and secure messaging for confidential conversations.</p>
-                        <div class="social-link">Message on Signal</div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Contact Summary -->
-            <div class="contact-section">
-                <h2 class="section-title">Get In Touch</h2>
-                <p style="text-align: center; margin-bottom: 20px;">I'm active across multiple platforms. Choose your preferred method to connect with me.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
-                        <div>
-                            <h3>Multiple Platforms</h3>
-                            <p>Choose from 8+ connection options</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-bolt"></i></div>
-                        <div>
-                            <h3>Quick Response</h3>
-                            <p>Typically reply within 24 hours</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-user-friends"></i></div>
-                        <div>
-                            <h3>Networking</h3>
-                            <p>Open to professional connections</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-text">Stay connected across platforms for updates, insights, and conversations</p>
-            <p class="copyright">© 2025 Arigye Wisdom. All rights reserved. | <span id="totalVisitors">Loading visitor stats...</span></p>
-        </div>
-    </footer>
-    
-    <!-- Stats Toggle Button -->
-    <div class="stats-toggle" id="statsToggle">
-        <i class="fas fa-chart-bar"></i>
+
+<!-- DANCING BACKGROUND IMAGES / ICONS (modern abstract movement) -->
+<div class="bg-dance">
+  <div class="dancing-icon">✨</div>
+  <div class="dancing-icon">💡</div>
+  <div class="dancing-icon">🚀</div>
+  <div class="dancing-icon">🌐</div>
+  <div class="dancing-icon">⚡</div>
+  <div class="dancing-icon">🎯</div>
+  <div class="dancing-icon">🔗</div>
+  <div class="dancing-icon">🤝</div>
+  <div class="dancing-icon">🧠</div>
+  <div class="dancing-icon">📱</div>
+</div>
+
+<main class="card">
+  <div class="profile">
+    <div class="avatar">
+      <span>WA</span>   <!-- initials; you can replace with an image if you want -->
     </div>
-    
-    <!-- Stats Panel -->
-    <div class="stats-panel" id="statsPanel">
-        <div class="stats-header">
-            <h3>Visitor Statistics</h3>
-            <button onclick="closeStats()" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">×</button>
-        </div>
-        <div id="statsContent">
-            <p><i class="fas fa-users"></i> Total Visitors: <span id="statsTotal">0</span></p>
-            <p><i class="fas fa-calendar-day"></i> Today: <span id="statsToday">0</span></p>
-            <p><i class="fas fa-clock"></i> Current Visitors: <span id="statsCurrent">0</span></p>
-            <p><i class="fas fa-map-marker-alt"></i> Your Location: <span id="statsLocation">Detecting...</span></p>
-            <hr>
-            <p style="font-size: 0.9rem; color: #666;"><i class="fas fa-info-circle"></i> Stats update every 5 minutes</p>
-        </div>
+    <h1>Arigye Wisdom</h1>
+    <div class="tagline">✦ Digital Professional | Connector | Tech Enthusiast ✦</div>
+    <div class="bio">
+      <i class="fas fa-quote-left" style="margin-right: 6px; opacity: 0.7;"></i>
+      Bridging ideas & people across platforms. Let's collaborate and build meaningful digital experiences.
     </div>
-    
-   <script>
-        // ======================
-        // LOCAL VISITOR COUNTER
-        // ======================
-        
-        // Initialize or update visitor count in localStorage
-        function updateLocalVisitorCount() {
-            // Get current count from localStorage
-            let totalVisits = localStorage.getItem('siteTotalVisits');
-            let todayVisits = localStorage.getItem('siteTodayVisits');
-            let todayDate = new Date().toDateString();
-            let lastVisitDate = localStorage.getItem('lastVisitDate');
-            
-            // Initialize if first visit
-            if (!totalVisits) {
-                totalVisits = 0;
-            }
-            if (!todayVisits || lastVisitDate !== todayDate) {
-                todayVisits = 0;
-                localStorage.setItem('lastVisitDate', todayDate);
-            }
-            
-            // Increment counts
-            totalVisits = parseInt(totalVisits) + 1;
-            todayVisits = parseInt(todayVisits) + 1;
-            
-            // Save to localStorage
-            localStorage.setItem('siteTotalVisits', totalVisits);
-            localStorage.setItem('siteTodayVisits', todayVisits);
-            
-            // Update display
-            document.getElementById('visitorCount').textContent = totalVisits.toLocaleString();
-            document.getElementById('totalVisitors').innerHTML = `<i class="fas fa-users"></i> Total Visitors: ${totalVisits.toLocaleString()}`;
-            
-            // Update stats panel
-            document.getElementById('statsTotal').textContent = totalVisits.toLocaleString();
-            document.getElementById('statsToday').textContent = todayVisits.toLocaleString();
-            
-            // Simulate concurrent users (random between 1-10)
-            document.getElementById('statsCurrent').textContent = Math.floor(Math.random() * 10) + 1;
-            
-            return { total: totalVisits, today: todayVisits };
-        }
-        
-        // ======================
-        // GEOLOCATION DETECTION
-        // ======================
-        
-        function detectLocation() {
-            if (navigator.geolocation) {
-                // Try to get precise location
-                navigator.geolocation.getCurrentPosition(
-                    function(position) {
-                        // Use a geocoding service (free tier of OpenStreetMap)
-                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                const city = data.address.city || data.address.town || data.address.village || 'Unknown';
-                                const country = data.address.country || 'Unknown';
-                                document.getElementById('statsLocation').textContent = `${city}, ${country}`;
-                            })
-                            .catch(() => {
-                                // Fallback to IP-based location
-                                getIPLocation();
-                            });
-                    },
-                    function(error) {
-                        // If user denies location, fallback to IP-based
-                        getIPLocation();
-                    }
-                );
-            } else {
-                // Fallback to IP-based location
-                getIPLocation();
-            }
-        }
-        
-        function getIPLocation() {
-            // Use free IP geolocation API
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const city = data.city || 'Unknown';
-                    const country = data.country_name || 'Unknown';
-                    document.getElementById('statsLocation').textContent = `${city}, ${country}`;
-                })
-                .catch(() => {
-                    document.getElementById('statsLocation').textContent = 'Location unavailable';
-                });
-        }
-        
-        // ======================
-        // STATS PANEL FUNCTIONS
-        // ======================
-        
-        function toggleStats() {
-            const panel = document.getElementById('statsPanel');
-            panel.classList.toggle('active');
-        }
-        
-        function closeStats() {
-            document.getElementById('statsPanel').classList.remove('active');
-        }
-        
-        // ======================
-        // INITIALIZATION
-        // ======================
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize visitor counter
-            updateLocalVisitorCount();
-            
-            // Detect user location
-            detectLocation();
-            
-            // Add event listener to stats toggle button
-            document.getElementById('statsToggle').addEventListener('click', toggleStats);
-            
-            // Simple hover effect enhancement
-            document.querySelectorAll('.social-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Add animation on scroll
-            const cards = document.querySelectorAll('.social-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            });
-            
-            // Simulate real-time updates every 5 minutes
-            setInterval(() => {
-                const current = document.getElementById('statsCurrent');
-                const currentCount = parseInt(current.textContent);
-                const change = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
-                const newCount = Math.max(1, currentCount + change);
-                current.textContent = newCount;
-            }, 300000); // 5 minutes
-        });
-        
-        // ======================
-        // SETUP INSTRUCTIONS
-        // ======================
-        
-        function showSetupInstructions() {
-            alert(`TO SET UP PROPER VISITOR TRACKING:
-            
-1. SIGN UP FOR FREE ANALYTICS:
-   - Go to https://counter.dev/
-   - Create a free account
-   - Add your website
-   - Get your tracking code
-   - Replace the script tag in the <head> with your code
-   
-2. OR USE GOOGLE ANALYTICS:
-   - Go to https://analytics.google.com/
-   - Create account
-   - Get your GA4 measurement ID
-   - Add it to the script below
-   
-Current tracking is local only (per device).`);
-        }
-        
-        // Show setup instructions on first visit
-        if (!localStorage.getItem('setupShown')) {
-            setTimeout(showSetupInstructions, 2000);
-            localStorage.setItem('setupShown', 'true');
-        }
-    </script>
-    
-   /* <!-- Optional: Google Analytics (Uncomment and add your GA4 ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_GA4_ID');
-    </script>
-    --> */
+  </div>
+
+  <div class="links">
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/wisdom-arigye-029b771b4" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+      <i class="fab fa-linkedin-in"></i><span>LinkedIn</span><i class="fas fa-arrow-right" style="opacity:0.6; font-size:0.9rem;"></i>
+    </a>
+    <!-- Instagram -->
+    <a href="https://instagram.com/wiz_livestream" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+      <i class="fab fa-instagram"></i><span>Instagram</span><i class="fas fa-arrow-right" style="opacity:0.6;"></i>
+    </a>
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@wiz_livestream" target="_blank" rel="noopener noreferrer" class="social-btn tiktok">
+      <i class="fab fa-tiktok"></i><span>TikTok</span><i class="fas fa-arrow-right"></i>
+    </a>
+    <!-- Twitter (X) -->
+    <a href="https://twitter.com/wiz_livestream" target="_blank" rel="noopener noreferrer" class="social-btn twitter">
+      <i class="fab fa-twitter"></i><span>Twitter</span><i class="fas fa-arrow-right"></i>
+    </a>
+    <!-- GitHub -->
+    <a href="https://github.com/wizlivestream" target="_blank" rel="noopener noreferrer" class="social-btn github">
+      <i class="fab fa-github"></i><span>GitHub</span><i class="fas fa-arrow-right"></i>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/256701178595" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">
+      <i class="fab fa-whatsapp"></i><span>WhatsApp</span><i class="fas fa-arrow-right"></i>
+    </a>
+    <!-- Email -->
+    <a href="mailto:wisdomarigye8@gmail.com" class="social-btn email">
+      <i class="fas fa-envelope"></i><span>Email</span><i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>📡 Connecting ideas, building networks — let’s create impact.</p>
+    <p style="margin-top: 8px;">&copy; 2026 Wisdom Arigye</p>
+  </div>
+</main>
+
+<!-- subtle floating effect for card entrance -->
+<script>
+  // optional: adds a small parallax effect on mousemove? Not necessary but fun.
+  // For extra "dancing", the CSS already handles background icons.
+  console.log("Modern animated profile ready ✨");
+</script>
 </body>
 </html>
